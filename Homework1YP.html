@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="eu">
+	<head>
+		<title>My Homework</title>
+	</head>
+	<body>
+		<ul id="loc">
+			<li id="i1">Tull</li>
+			<li id="i2">Set</li>
+			<li id="i3">Up</li>
+			<li id="i4">Now</li>
+			<li id="i5">Tobot</li>
+		</ul>
+	<script type="text/javascript">
+		function first() {
+			var loc = document.getElementById('loc');
+			loc.firstElementChild.setAttribute("style", "color:green;");
+		};
+
+		function second() {
+			var loc = document.getElementById('loc');
+			if (loc.lastElementChild) {
+				loc.lastElementChild.setAttribute('style', 'color:green');
+        	}	
+		};
+
+		var loc = document.getElementById('loc');
+        var firstItem = loc.firstElementChild;
+
+		function third() {
+		 	var listItem = document.getElementsByTagName("li");
+            for (var i = 0; i < listItem.length; i++) {
+                listItem[i].setAttribute("style", "color:black");
+            }
+
+            if(firstItem){
+        		firstItem.setAttribute("style", "color:green");
+    		    return;
+            }
+           
+    //         if(parentItem != null){
+    //     		parentItem.setAttribute("style", "color:green");
+    //         }
+    //         parentItem = parentItem.nextElementSibling;
+    //         console.log(parentItem);
+		};
+
+
+		function four() {
+			for(i=0; ul.length-1<0; i++)
+				var loc = document.getElementById('loc');
+				loc.previousElementSibling.setAttribute('style', 'color:green');
+		};
+
+		function five(form) {
+			if(form.input.value) {
+                var loc = document.createElement("li");
+                loc.innerHTML = form.input.value;
+                console.log(loc);
+                document.getElementById("loc").appendChild(loc);
+			}
+	    };
+
+	    function six() {
+	    	var c1 = document.getElementById('loc');
+    	    las = loc.lastElementChild;
+	    	c1.removeChild(las);
+	    };
+
+	    function seven(form) {
+	    	if(form.input.value) {
+	    		var parent = document.getElementsByTagName("ul")[0];
+	    		var li = document.createElement("li")
+	    		li.innerHTML = form.input.value;
+    		 	parent.insertBefore(li, loc.children[0]);
+            }
+	    };
+	</script> 
+		<form>
+			Enter the text that will be added or replaced in the item:
+			<input type="text" id='myinput' name="input" size='25'/><br />
+			<input type="button" value="Select first item" onclick="first()" />
+			<input type="button" value="Select last item" onclick="second()" /><br />
+			<input type="button" value="Select next item" onclick="third()" />
+			<input type="button" value="Select previous item" onclick="four()" /><br />
+			<input type="button" value="Add to the end" onclick="five(this.form)" />
+			<input type="button" value="Delete item" onclick="six()" />
+			<input type="button" value="Add to the beginning" onclick="seven(this.form)" />
+		</form>
+	</body>
+</html>
